@@ -2,9 +2,11 @@
 Chars74Kデータセットを使用したCycleGANによる手書き文字からコンピュータ文字へのマッピングのテストです。
 
 ## 実行結果
-<img src="https://latex.codecogs.com/gif.latex?F_s" />  
-
+GeneratorBへの入力画像  
 ![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/realA.png)  
-![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/realB.png)  
-![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/fakeA.png)  
+GeneratorBの出力画像  
 ![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/fakeB.png)  
+GeneratorAへの入力画像  
+![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/realB.png)  
+GeneratorAの出力画像  
+![](https://github.com/s059ff/cyclegan-chars74k/blob/master/sample/fakeA.png)  
