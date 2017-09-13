@@ -1,0 +1,2 @@
+# cyclegan-chars74k
+Chars74Kデータセットを使用したCycleGANによる手書き文字からコンピュータ文字へのマッピングのテストです。
