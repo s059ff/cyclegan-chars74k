@@ -182,15 +182,15 @@ def main():
             # (2) Update G network
             ###########################
 
-            # gan A
+            # gen A
             fakeA = genA(realB)
             y_fakeA = disA(fakeA)
-            loss_ganA = F.sum((y_fakeA - REAL_LABEL) ** 2) / np.prod(y_fakeA.shape)
+            loss_genA = F.sum((y_fakeA - REAL_LABEL) ** 2) / np.prod(y_fakeA.shape)
 
-            # gan B
+            # gen B
             fakeB = genB(realA)
             y_fakeB = disB(fakeB)
-            loss_ganB = F.sum((y_fakeB - REAL_LABEL) ** 2) / np.prod(y_fakeB.shape)
+            loss_genB = F.sum((y_fakeB - REAL_LABEL) ** 2) / np.prod(y_fakeB.shape)
 
             # rec A
             recA = genA(fakeB)
@@ -201,14 +201,12 @@ def main():
             loss_recB = F.mean_absolute_error(recB, realB)
 
             # gen loss
-            loss_gen = loss_ganA + loss_ganB + 10 * (loss_recA + loss_recB)
-            # loss_genB = loss_ganB + lambda_ * (loss_recB + loss_recA)
+            loss_gen = loss_genA + loss_genB + 10 * (loss_recA + loss_recB)
 
             # update gen
             genA.cleargrads()
             genB.cleargrads()
             loss_gen.backward()
-            # loss_genB.backward()
             optimizer_genA.update()
             optimizer_genB.update()
 
